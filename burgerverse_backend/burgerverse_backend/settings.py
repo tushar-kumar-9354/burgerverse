@@ -93,6 +93,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
 ]
 
+
 # Remove these lines (not needed):
 # WHITENOISE_USE_FINDERS = True
 # WHITENOISE_MANIFEST_STRICT = False
