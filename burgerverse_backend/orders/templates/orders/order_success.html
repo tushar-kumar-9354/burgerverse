@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="text-align:center; margin-top:50px;">
+    <h1>🎉 Order Confirmed!</h1>
+    <p>Your delicious burgers are being prepared 🍔🔥</p>
+
+    <a class="btn" href="{% url 'menu:menu_list' %}">
+        Back to Menu
+    </a>
+</div>
+{% endblock %}

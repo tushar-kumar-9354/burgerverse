@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="page-title">Our Menu</h1>
+
+{% for category in categories %}
+  <section class="category">
+    <h2>{{ category.name }}</h2>
+
+    <div class="products">
+      {% for product in category.products.all %}
+        {% if product.is_available %}
+          <div class="product-card">
+            <h3>{{ product.name }}</h3>
+            <p>₹{{ product.price }}</p>
+            <a class="btn" href="{% url 'orders:add_to_cart' product.id %}">
+              Add to Cart
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
+{% endblock %}

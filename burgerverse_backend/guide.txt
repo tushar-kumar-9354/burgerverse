@@ -1,0 +1,213 @@
+BurgerVerse – Project Guide
+
+Phase 1: Environment & Base Setup
+--------------------------------
+1. Created project root folder: BurgerVerse
+2. Created virtual environment: burgerverse_env
+3. Activated environment
+4. Installed Django
+5. Created backend project: burgerverse_backend
+6. Verified server is running
+
+Purpose:
+- Keep project isolated
+- Follow production-grade structure
+- Make onboarding easy for other developers
+
+Phase 1 completed successfully
+
+
+Phase 2: Backend Architecture
+-----------------------------
+1. Created core Django apps:
+   - accounts (authentication)
+   - menu (products & categories)
+   - orders (cart & checkout)
+   - core (common pages)
+2. Registered all apps in settings.py
+3. Verified server runs without errors
+
+Architecture Principle:
+- One responsibility per app
+- Clean separation of concerns
+- Easy scaling & maintenance
+
+Phase 2 completed
+
+
+Phase 3: Authentication System
+------------------------------
+1. Created custom User model using AbstractUser
+2. Added unique email field
+3. Configured AUTH_USER_MODEL
+4. Registered User in admin panel
+5. Ran migrations successfully
+6. Created superuser
+
+Why Custom User?
+- Flexibility for future features
+- Cleaner auth control
+- Production-grade security
+
+Phase 3 completed successfully
+
+
+Phase 4: Menu System
+-------------------
+1. Created Category model
+2. Created Product model with FK relation
+3. Added price-safe DecimalField
+4. Configured media handling
+5. Registered models with clean admin UI
+6. Verified CRUD via admin panel
+
+Design Principle:
+- Category → Product relationship
+- Availability toggles instead of deletions
+- Admin-first productivity
+
+Phase 4 completed successfully
+
+
+Phase 5: Order System
+--------------------
+1. Created Order model with status lifecycle
+2. Linked orders to custom User model
+3. Created OrderItem model for product tracking
+4. Stored price snapshots per item
+5. Built admin inline UI for orders
+6. Verified order creation via admin
+
+Design Principle:
+- One Order → many OrderItems
+- Immutable price history
+- Clean order status management
+
+Phase 5 completed
+
+Phase 6: Cart Logic & Services
+-----------------------------
+1. Introduced service layer (orders/services.py)
+2. Created cart creation logic
+3. Added product add/remove logic
+4. Centralized order total calculation
+5. Kept business logic out of views
+
+Architecture Rule:
+- Views handle HTTP
+- Services handle logic
+- Models handle data
+
+Phase 6 completed
+
+
+Phase 7: Views & URLs
+--------------------
+1. Created thin menu views
+2. Connected cart logic to services
+3. Added clean URL routing
+4. Integrated menu & orders apps
+5. Created backend-to-frontend bridge
+
+Rule:
+- Views delegate
+- Services calculate
+- Models store
+
+phase 7 completed
+
+
+Phase 8: Frontend Design System
+-------------------------------
+1. Created global base layout
+2. Added reusable navbar & footer
+3. Connected menu page to base template
+4. Introduced static CSS architecture
+5. Built scalable frontend foundation
+
+Frontend Rule:
+- Layout first
+- Pages extend base
+- Components reused
+
+phase 8 completed
+
+
+Phase 9: Cart Page & Order Summary
+---------------------------------
+1. Created cart detail view
+2. Displayed order items and totals
+3. Added remove-from-cart functionality
+4. Linked cart page in navbar
+5. Styled cart UI for clarity
+
+UX Principle:
+- Show items clearly
+- Show total always
+- Simple actions, no confusion
+
+Phase 9 completed
+
+Phase 10: Checkout & Order Finalization
+--------------------------------------
+1. Implemented checkout service logic
+2. Prevented empty cart checkout
+3. Converted cart to confirmed order
+4. Updated order status lifecycle
+5. Added order success confirmation page
+
+Business Rule:
+- Cart is temporary
+- Order is permanent
+- Status drives workflow
+
+Phase 10 completed
+
+
+Admin Test Data Setup
+--------------------
+1. Added test categories (Burgers, Fries, Drinks)
+2. Added realistic products with prices
+3. Created test user
+4. Created test order (PENDING)
+5. Added order items and verified totals
+6. Validated frontend-cart consistency
+
+Purpose:
+- Verify end-to-end data flow
+- Ensure admin and frontend stay in sync
+
+phase test completed
+
+Phase 11: Authentication UI
+---------------------------
+1. Added login, logout, signup URLs
+2. Used Django’s secure auth system
+3. Created clean auth templates
+4. Connected navbar to auth state
+5. Styled authentication forms
+
+Security Rule:
+- Never implement auth manually
+- Use Django’s built-in system
+
+phase 11 completed
+
+
+Phase 12: Production Readiness
+------------------------------
+1. Secured secrets using .env
+2. Disabled DEBUG mode
+3. Configured PostgreSQL database
+4. Prepared static & media files
+5. Added security hardening
+6. Created requirements.txt
+7. Made project deployment-ready
+
+Production Rules:
+- No secrets in code
+- DEBUG always OFF
+- PostgreSQL for reliability
+- Static files collected
+ 
+phase 12 completed
